@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.example.youcef</groupId>
 	<artifactId>devOps</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>devOps</name>
 	<description>Demo project for Spring Boot</description>
@@ -23,7 +23,7 @@
 		<connection>scm:git:https://github.com/youcef-f/devops.git</connection>
 		<developerConnection>scm:git:https://github.com/youcef-f/devops.git</developerConnection>
 		<url>https://github.com/youcef-f/devops.git</url>
-		<tag>v1.1.1</tag>
+		<tag>v1.1.0</tag>
 	</scm>
 	
 	
