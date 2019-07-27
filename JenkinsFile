@@ -40,8 +40,10 @@ node {
          sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
       } else {         
         bat """
-           cd target
-           curl -u jenkins:jenkins -T *.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"
+           cd target 
+           for %%f in (*.war) do (
+               curl -u jenkins:jenkins -F "pfile=@%%f" -F "profileKey=001" http://localhost:8080/manager/text/deploy?path=/devops&update=true"
+          )
          """
       }
    }
