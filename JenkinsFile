@@ -29,6 +29,9 @@ node {
          bat(/"${mvnHome}\bin\mvn" sonar:sonar/)
       }
    }
+     stage('list target folder') {
+       sh 'dir target/*'
+   }
    stage('Deploy') {
        sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
    }
