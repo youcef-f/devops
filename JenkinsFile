@@ -30,7 +30,9 @@ node {
       }
    }
      stage('list target folder') {
-         bat(/"dir" target\*  /)
+         bat """
+           dir target\\*
+         """
    }
    stage('Deploy') {
        
