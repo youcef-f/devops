@@ -30,10 +30,15 @@ node {
       }
    }
      stage('list target folder') {
-       sh 'dir target/*'
+       sh 'dir target\*'
    }
    stage('Deploy') {
-       sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
+       
+      if (isUnix()) {
+         sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
+      } else {
+         sh 'curl -u jenkins:jenkins -T target\**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
+      }
    }
    stage("Smoke Test"){
        sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
