@@ -42,7 +42,7 @@ node {
         bat """
            cd target 
            for %%f in (*.war) do (
-               curl -u jenkins:jenkins -F "pfile=@%%f" -F "profileKey=001" http://localhost:8080/manager/text/deploy?path=/devops&update=true"
+               curl -u jenkins:jenkins -F "pfile=@%%f" http://localhost:8080/manager/text/deploy?path=/devops&update=true"
           )
          """
       }
