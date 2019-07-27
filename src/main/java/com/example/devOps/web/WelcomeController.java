@@ -14,7 +14,7 @@ public class WelcomeController {
 	@RequestMapping("/")
 	public String welcome(Model model) {
 		logger.info("Processing index request: youcef fethoune");
-		model.addAttribute("course", "simpleApp");
+		model.addAttribute("course", "DevOps");
 		return "index";
 	}
 }
