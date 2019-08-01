@@ -13,8 +13,18 @@ public class WelcomeController {
 	
 	@RequestMapping("/")
 	public String welcome(Model model) {
-		logger.info("Processing index request: youcef fethoune");
+		logger.info("message : Processing index request: youcef fethoune");
 		model.addAttribute("course", "DevOps");
 		return "index";
 	}
+	
+	
+		@RequestMapping("/hello")
+	public String hello(Model model) {
+		logger.info("Message : Processing hello request: youcef fethoune");
+		//model.addAttribute("course", "DevOps");
+		return "hello";
+	}
+	
+	
 }
